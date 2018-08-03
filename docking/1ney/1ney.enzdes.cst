@@ -1,0 +1,66 @@
+# for enzdes benchmark
+# SJB 1-28-2016
+
+# Glu 165 to (deprotonate the alcoholic carbon)
+
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: C3 C2 C1
+  TEMPLATE::    ATOM_MAP:   1     residue3: 1ne
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: OOC
+  TEMPLATE::    ATOM_MAP:   2     residue1: E 
+
+  CONSTRAINT::  distanceAB: 3.0  0.50   100.0   0 #covalent intermediate, so turns off VDW 
+CONSTRAINT::    angle_B:  120.0   10.00 10.00  360.00   1
+CONSTRAINT::    torsion_A:  90.0   10.00 10.00  360.00   1
+#CONSTRAINT::    torsion_AB:  90.0   10.00 10.00  360.00   1
+CONSTRAINT::    torsion_B:  180.0   20.00 10.00  180.00   1
+CST::END
+
+# HIS 95 to carbonyl oxygen
+#
+CST::BEGIN
+  TEMPLATE::    ATOM_MAP:   1   atom_name: O5 C2 C3
+  TEMPLATE::    ATOM_MAP:   1   residue3: 1ne
+
+  TEMPLATE::    ATOM_MAP:   2   atom_name: NE2 CD2 CG
+  TEMPLATE::    ATOM_MAP:   2   residue1: H
+
+  CONSTRAINT:: distanceAB: 2.7 0.30 100.0 0
+  CONSTRAINT::    angle_B:  120.0   20.00 10.00  360.00   1
+  CONSTRAINT::    torsion_A:  0.0   20.00 10.00  180.00   1
+  CONSTRAINT::    torsion_B:  180.0   30.00 10.00  180.00   1
+CST::END
+
+
+# HIS 95 to terminal alcohol (protonates)
+
+CST::BEGIN
+  TEMPLATE::    ATOM_MAP:   1   atom_name: O6 C3 C2
+  TEMPLATE::    ATOM_MAP:   1   residue3: 1ne
+
+  TEMPLATE::    ATOM_MAP:   2   atom_name: NE2 CD2 CG  
+  TEMPLATE::    ATOM_MAP:   2   residue1: H
+
+  CONSTRAINT:: distanceAB: 3.0 0.50 100.0 0
+#  CONSTRAINT::    angle_B:  120.0   20.00 100.00  360.00   1
+CST::END
+
+#
+#https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2890037/pdf/nihms209403.pdf
+# LYS12 to the phosphoester oxygen
+# charge stabilization
+CST::BEGIN
+  TEMPLATE::    ATOM_MAP:   1   atom_name: O5 C3 C2
+  TEMPLATE::    ATOM_MAP:   1   residue3: 1ne
+
+  TEMPLATE::    ATOM_MAP:   2   atom_type: Nlys
+  TEMPLATE::    ATOM_MAP:   2   residue1: K
+
+  CONSTRAINT:: distanceAB: 3.0 0.50 100.0 0
+#  CONSTRAINT::    angle_B:  120.0   20.00 100.00  360.00   1
+#  CONSTRAINT::    torsion_AB:  0.0   30.00 100.00  180.00   1
+#  CONSTRAINT::    torsion_A:  0.0   30.00 100.00  180.00   1
+#  CONSTRAINT::    torsion_B:  0.0   10.00 100.00  180.00   1
+CST::END

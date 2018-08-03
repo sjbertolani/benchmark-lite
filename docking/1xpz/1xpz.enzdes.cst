@@ -1,0 +1,125 @@
+# for enzdes benchmark
+# SJB 4-5-17
+
+#
+# There are metal coordinating residues in this structure
+# the metal coordination is specified first, then the
+# constraints for the docking are added. The metal will be docked in
+# what we call the apo protein
+#
+# Metal binding are His 94, HIS 96, HIS 119
+
+
+### his 94
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: ZN V1 V2
+  TEMPLATE::    ATOM_MAP:   1     residue3: ZN 
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: Nhis
+  TEMPLATE::    ATOM_MAP:   2     residue1: H 
+
+  CONSTRAINT::  distanceAB: 2.1   0.10   100.0   1 #covalent intermediate, so turns off VDW
+#  CONSTRAINT::    angle_A:  120.0   10.00 100.00  360.00   1		   
+  CONSTRAINT::    angle_B:  120.0   10.00 10.00  360.00   1
+  CONSTRAINT::  torsion_B:  180.0 3.0  10.0   180
+
+CST::END
+
+
+#### HIS 96
+
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: ZN V1 V2
+  TEMPLATE::    ATOM_MAP:   1     residue3: ZN 
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: Nhis
+  TEMPLATE::    ATOM_MAP:   2     residue1: H 
+
+  CONSTRAINT::  distanceAB: 2.1   0.10   100.0   1 #covalent intermediate, so turns off VDW
+#  CONSTRAINT::    angle_A:  120.0   10.00 100.00  360.00   1		   
+  CONSTRAINT::    angle_B:  120.0   20.00 10.00  360.00   1
+  CONSTRAINT::  torsion_B:  180.0 30.0  10.0   180
+
+CST::END
+
+### hist 119
+
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: ZN V1 V2
+  TEMPLATE::    ATOM_MAP:   1     residue3: ZN 
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: Nhis
+  TEMPLATE::    ATOM_MAP:   2     residue1: H 
+
+  CONSTRAINT::  distanceAB: 2.1   0.10   100.0   1 #covalent intermediate, so turns off VDW
+#  CONSTRAINT::    angle_A:  120.0   10.00 100.00  360.00   1		   
+  CONSTRAINT::    angle_B:  120.0   20.00 10.00  360.00   1
+  CONSTRAINT::  torsion_B:  180.0 30.0  10.0   180
+
+CST::END
+
+### Metal to ligand
+
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: N1 S1 O2
+  TEMPLATE::    ATOM_MAP:   1     residue3: 1xp  
+
+  TEMPLATE::    ATOM_MAP:   2     atom_name: ZN V1 V2
+  TEMPLATE::    ATOM_MAP:   2     residue3: ZN 
+
+  CONSTRAINT::  distanceAB: 2.3   0.1   100.0   0 #covalent intermediate, so turns off VDW
+  CONSTRAINT::    angle_A:  100.0   10.00 100.00  360.00   1		   
+#  CONSTRAINT::    angle_B:  120.0   10.00 100.00  360.00   1
+  CONSTRAINT::  torsion_A:  -180.0 30.0  10.0   180
+#  CONSTRAINT::  torsion_B:  180.0 10.0  100.0   180
+
+CST::END
+
+### possibly add the metal to oxygen constraints here
+## the nitrogen would be the hydroxyl, 
+## and then the O-S-O would be the O-C-O
+## everything else is extra
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: N1 S1 O2
+  TEMPLATE::    ATOM_MAP:   1     residue3: 1xp  
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: OH
+  TEMPLATE::    ATOM_MAP:   2     residue3: THR
+
+  CONSTRAINT::  distanceAB: 2.8   0.25   100.0   0 #covalent intermediate, so turns off VDW
+#  CONSTRAINT::    angle_A:  120.0   10.00 100.00  360.00   1		   
+#  CONSTRAINT::    angle_B:  120.0   10.00 100.00  360.00   1
+#  CONSTRAINT::  torsion_B:  180.0 10.0  100.0   180
+
+CST::END
+
+
+# keep oxygens near metal - artifact 
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: ZN V1 V2
+  TEMPLATE::    ATOM_MAP:   1     residue3: ZN 
+
+  TEMPLATE::    ATOM_MAP:   2     atom_name: O1 S1 N1
+  TEMPLATE::    ATOM_MAP:   2     residue3: 1xp 
+
+  CONSTRAINT::  distanceAB: 3.2   0.5   100.0   0 #covalent intermediate, so turns off VDW
+CST::END
+
+# keep oxygens near metal - artifact 
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: ZN V1 V2
+  TEMPLATE::    ATOM_MAP:   1     residue3: ZN 
+
+  TEMPLATE::    ATOM_MAP:   2     atom_name: O3 S1 N1
+  TEMPLATE::    ATOM_MAP:   2     residue3: 1xp  
+
+  CONSTRAINT::  distanceAB: 3.2   0.5   100.0   0 #covalent intermediate, so turns off VDW
+CST::END
+

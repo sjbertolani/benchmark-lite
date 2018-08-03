@@ -1,0 +1,110 @@
+# for enzdes benchmark
+# SJB 3-7-17
+
+#
+# There are metal coordinating residues in this structure
+# the metal coordination is specified first, then the
+# constraints for the docking are added. The metal will be docked in
+# what we call the apo protein
+#
+# Metal binding are His 62, Cys 91, Cys 94 metal is Zn
+
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: ZN V1 V2
+  TEMPLATE::    ATOM_MAP:   1     residue3: ZN 
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: Nhis
+  TEMPLATE::    ATOM_MAP:   2     residue1: H 
+
+  CONSTRAINT::  distanceAB: 2.0   0.10   100.0   1 #covalent intermediate, so turns off VDW
+#  CONSTRAINT::    angle_A:  120.0   10.00 100.00  360.00   1		   
+  CONSTRAINT::    angle_B:  120.0   10.00 10.00  360.00   1
+  CONSTRAINT::  torsion_B:  0.0 10.0  10.0   180
+
+CST::END
+
+## Cys 91
+
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_type: Zn2p
+  TEMPLATE::    ATOM_MAP:   1     residue3: ZN 
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: S
+  TEMPLATE::    ATOM_MAP:   2     residue1: C 
+
+  CONSTRAINT::  distanceAB: 2.3   0.10   100.0   1 #covalent intermediate, so turns off VDW
+
+  CONSTRAINT::    angle_B:  90.0   25.00 10.00  360.00   1
+  CONSTRAINT::  torsion_B:  90.0 30.0  10.0   180
+
+CST::END
+
+## Cys 94
+
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_type: Zn2p
+  TEMPLATE::    ATOM_MAP:   1     residue3: ZN 
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: S
+  TEMPLATE::    ATOM_MAP:   2     residue1: C 
+
+  CONSTRAINT::  distanceAB: 2.3   0.10   100.0   1 #covalent intermediate, so turns off VDW
+  CONSTRAINT::    angle_B:  90.0   25.00 10.00  360.00   1
+  CONSTRAINT::  torsion_B:  110.0 30.0  10.0   180
+
+CST::END
+
+
+## Oxygen on the cytosine that would be equivalent to a metal bound hydroxyl group
+
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: O1 C2 C3
+  TEMPLATE::    ATOM_MAP:   1     residue3: 1p6
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: Zn2p
+  TEMPLATE::    ATOM_MAP:   2     residue3: ZN 
+
+  CONSTRAINT::  distanceAB: 2.0   0.10   100.0   1 #covalent intermediate, so turns off VDW
+# specific to system
+  CONSTRAINT::    angle_A:  125.0   5.00 10.00  360.00   1		   
+#  CONSTRAINT::    angle_B:  109.0   10.00 100.00  360.00   1
+#  CONSTRAINT::  torsion_B:  180.0 10.0  100.0   180
+
+CST::END
+
+##  GLU to oxygen (water) (seee http://pubs.acs.org/doi/pdf/10.1021/ja046462k)
+
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: O1 C2 C3
+  TEMPLATE::    ATOM_MAP:   1     residue3: 1p6
+
+  TEMPLATE::    ATOM_MAP:   2     atom_name: OE2 CG CB
+  TEMPLATE::    ATOM_MAP:   2     residue3: GLU
+
+  CONSTRAINT::  distanceAB: 3.0   0.50   100.0   0 #covalent intermediate, so turns off VDW
+  CONSTRAINT::    angle_B:  120.0   20.00 10.00  360.00   1
+  CONSTRAINT::    torsion_B:  -180.0   30.00 10.00  180.00   1
+CST::END
+
+
+## nitrogne on cytosine coordinated by glu64 as well
+
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: N2 C1 N1
+  TEMPLATE::    ATOM_MAP:   1     residue3: 1p6
+
+  TEMPLATE::    ATOM_MAP:   2     atom_name: OE1 CG CB
+  TEMPLATE::    ATOM_MAP:   2     residue3: GLU 
+
+
+  CONSTRAINT::  distanceAB: 3.0   0.50   100.0   0 #covalent intermediate, so turns off VDW
+  CONSTRAINT::    angle_B:  120.0   20.00 10.00  360.00   1
+  CONSTRAINT::    torsion_B:  -180.0   30.00 10.00  180.00   1
+
+CST::END

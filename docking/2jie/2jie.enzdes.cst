@@ -1,0 +1,80 @@
+# for enzdes benchmark
+# SJB 1-19-2016
+
+# Glu 356 to anomeric carbon (nucleophilic attack)
+
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: C1 O1 C5
+  TEMPLATE::    ATOM_MAP:   1     residue3: 2ji
+
+  TEMPLATE::    ATOM_MAP:   2     atom_name: OE2 CD CG
+  TEMPLATE::    ATOM_MAP:   2     residue1: E 
+
+# since the structure is so... weird? with the oxygen below the glucose and a short distance, need to relax the dist a tiny bit.. still in the realm of bond distances for a transition
+  CONSTRAINT::  distanceAB: 1.5   0.20   100.0   1 #covalent intermediate, so turns off VDW
+  CONSTRAINT::    angle_A:  109.0   10.00 10.00  360.00   1		   
+  CONSTRAINT::    angle_B:  120.0   30.00 10.00  360.00   1
+#  CONSTRAINT::  torsion_A:  106.0 20.0  10.0   180
+#  CONSTRAINT::  torsion_A:  30.0 10.0  10.0   180
+#  CONSTRAINT::  torsion_AB:  106.0 30.0  10.0   180
+  CONSTRAINT::  torsion_B:  -180.0 10.0  10.0   180
+
+CST::END
+
+## GLU 167 to leaving group oxygen, not in the ts inhibitor, skip
+
+# Tyr 298 to GLU 356 
+
+CST::BEGIN
+  TEMPLATE::    ATOM_MAP:   1   atom_name: OE2 CD CG
+  TEMPLATE::    ATOM_MAP:   1   residue1: E
+
+  TEMPLATE::    ATOM_MAP:   2   atom_type: OH
+  TEMPLATE::    ATOM_MAP:   2   residue1: Y
+
+  CONSTRAINT:: distanceAB: 3.0 0.50 100.0 0
+  CONSTRAINT::    angle_B:  120.0   10.00 10.00  360.00   1
+CST::END
+
+# Glu 356 to anomeric carbon (nucleophilic attack)
+
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: C1 C2 C3
+  TEMPLATE::    ATOM_MAP:   1     residue3: 2ji
+
+  TEMPLATE::    ATOM_MAP:   2     atom_name: OE2 CD CG
+  TEMPLATE::    ATOM_MAP:   2     residue1: E 
+
+  CONSTRAINT::  distanceAB: 1.5   0.20   100.0   1 #covalent intermediate, so turns off VDW
+  CONSTRAINT::    angle_A:  109.0   10.00 10.00  360.00   1		   
+  CONSTRAINT::    angle_B:  120.0   30.00 10.00  360.00   1
+#  CONSTRAINT::  torsion_A:  -144.0 20.0  10.0   180
+#  CONSTRAINT::  torsion_AB:  106.0 20.0  10.0   180
+  CONSTRAINT::  torsion_B:  -180.0 10.0  10.0   180
+
+CST::END
+
+## potentially add one that keeps the glu 167 to the glu 356 - hbond distance 
+## artificial to keep it pointed inward
+
+#GLU167 artificial cst to ligand to orient
+# the sugar in the correct way
+# if there was a leaving group, there would be a constraint to the oxygen
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: C1 C2 C3
+  TEMPLATE::    ATOM_MAP:   1     residue3: 2ji
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: OOC
+  TEMPLATE::    ATOM_MAP:   2     residue1: E 
+
+  CONSTRAINT::  distanceAB: 3.3   0.50   100.0   0 #covalent intermediate, so turns off VDW
+#  CONSTRAINT::    angle_A:  109.0   10.00 10.00  360.00   1		   
+#  CONSTRAINT::    angle_B:  120.0   30.00 10.00  360.00   1
+#  CONSTRAINT::  torsion_A:  -144.0 20.0  10.0   180
+#  CONSTRAINT::  torsion_AB:  106.0 20.0  10.0   180
+#  CONSTRAINT::  torsion_B:  -180.0 10.0  10.0   180
+
+CST::END

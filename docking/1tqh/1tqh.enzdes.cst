@@ -1,0 +1,67 @@
+# for enzdes benchmark
+# SJB 1-28-2016
+
+#Ser 94 nucleophile
+
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: C3 O2 O1
+  TEMPLATE::    ATOM_MAP:   1     residue3: 1tq
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: OH
+  TEMPLATE::    ATOM_MAP:   2     residue1: S
+
+  CONSTRAINT::  distanceAB: 1.4   0.10   100.0   1 #covalent intermediate, so turns off VDW 
+CONSTRAINT::    angle_A:  109.0   10.00 10.00  360.00   1
+CONSTRAINT::    angle_B:  120.0   20.00 10.00  360.00   1
+    
+    
+CST::END
+
+# HIS 223 to SER 94
+
+CST::BEGIN
+  TEMPLATE::    ATOM_MAP:   1   atom_type: OH
+  TEMPLATE::    ATOM_MAP:   1   residue1: S
+
+  TEMPLATE::    ATOM_MAP:   2   atom_type: Ntrp
+  TEMPLATE::    ATOM_MAP:   2   residue1: H
+
+  CONSTRAINT:: distanceAB: 3.0 0.50 100.0 0
+  CONSTRAINT::    angle_B:  120.0   20.00 10.00  360.00   1
+    CONSTRAINT::  torsion_B:  180.0 30.0  10.0   180
+    
+CST::END
+
+#oxyanion hole to PHE 25 N
+
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: O1 C3 O2
+  TEMPLATE::    ATOM_MAP:   1     residue3: 1tq
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: Nbb
+  TEMPLATE::    ATOM_MAP:   2     residue1: F
+
+  CONSTRAINT::  distanceAB: 3.0   0.50   100.0   0 #covalent intermediate, so turns off VDW 
+CONSTRAINT::    angle_A:  120.0   20.00 10.00  360.00   1
+#CONSTRAINT::    angle_B:  120.0   20.00 10.00  360.00   1
+    
+    
+CST::END
+
+
+#ASP 193 to HIS 223
+
+CST::BEGIN
+  TEMPLATE::    ATOM_MAP:   1   atom_type: OOC
+  TEMPLATE::    ATOM_MAP:   1   residue1: D
+
+  TEMPLATE::    ATOM_MAP:   2   atom_type: Ntrp
+  TEMPLATE::    ATOM_MAP:   2   residue1: H
+
+  CONSTRAINT:: distanceAB: 3.0 0.50 100.0 0
+  CONSTRAINT::    angle_A:  120.0   20.00 10.00  360.00   1
+#    CONSTRAINT::  torsion_B:  180.0 30.0  10.0   180
+    
+CST::END

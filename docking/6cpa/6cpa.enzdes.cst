@@ -1,0 +1,184 @@
+# for enzdes benchmark
+# SJB 4-9-17
+
+#
+# There are metal coordinating residues in this structure
+# the metal coordination is specified first, then the
+# constraints for the docking are added. The metal will be docked in
+# what we call the apo protein
+#
+# Metal binding are His 69, HIS 196, GLU 72, 
+
+
+### his 69
+#1
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: ZN V1 V2
+  TEMPLATE::    ATOM_MAP:   1     residue3: ZN 
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: Nhis
+  TEMPLATE::    ATOM_MAP:   2     residue1: H 
+
+  CONSTRAINT::  distanceAB: 2.1   0.10   100.0   1 #covalent intermediate, so turns off VDW
+#  CONSTRAINT::    angle_A:  120.0   10.00 100.00  360.00   1		   
+  CONSTRAINT::    angle_B:  120.0   20.00 10.00  360.00   1
+  CONSTRAINT::  torsion_B:  0.0 20.0  10.0   180
+
+CST::END
+
+
+#### HIS 196
+#2
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: ZN V1 V2
+  TEMPLATE::    ATOM_MAP:   1     residue3: ZN 
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: Nhis
+  TEMPLATE::    ATOM_MAP:   2     residue1: H 
+
+  CONSTRAINT::  distanceAB: 2.1   0.10   100.0   1 #covalent intermediate, so turns off VDW
+#  CONSTRAINT::    angle_A:  120.0   10.00 100.00  360.00   1		   
+  CONSTRAINT::    angle_B:  120.0   20.00 10.00  360.00   1
+  CONSTRAINT::  torsion_B:  35.0 20.0  10.0   180
+
+CST::END
+
+### GLU 72
+#3
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: ZN V1 V2
+  TEMPLATE::    ATOM_MAP:   1     residue3: ZN 
+
+  TEMPLATE::    ATOM_MAP:   2     atom_name: OE1 CD CG
+  TEMPLATE::    ATOM_MAP:   2     residue1: E
+
+  CONSTRAINT::  distanceAB: 2.2   0.20   100.0   1 #covalent intermediate, so turns off VDW
+#  CONSTRAINT::    angle_A:  120.0   10.00 100.00  360.00   1		   
+  CONSTRAINT::    angle_B:  120.0   20.00 10.00  360.00   1
+  CONSTRAINT::  torsion_B:  180.0 20.0  10.0   180
+
+CST::END
+
+### GLU 72
+#4
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: ZN V1 V2
+  TEMPLATE::    ATOM_MAP:   1     residue3: ZN 
+
+  TEMPLATE::    ATOM_MAP:   2     atom_name: OE2 CD CG
+  TEMPLATE::    ATOM_MAP:   2     residue1: E
+
+  CONSTRAINT::  distanceAB: 2.2   0.20   100.0   1 #covalent intermediate, so turns off VDW
+#  CONSTRAINT::    angle_A:  120.0   10.00 100.00  360.00   1		   
+  CONSTRAINT::    angle_B:  120.0   20.00 10.00  360.00   1
+  CONSTRAINT::  torsion_B:  180.0 20.0  10.0   180
+
+CST::END
+
+# keep the oxygen to the metal
+#5
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: O7 P1 C3
+  TEMPLATE::    ATOM_MAP:   1     residue3: 6cp 
+
+  TEMPLATE::    ATOM_MAP:   2     atom_name: ZN V1 V2
+  TEMPLATE::    ATOM_MAP:   2     residue3: ZN 
+
+  CONSTRAINT::  distanceAB: 2.2   0.20   100.0   1 #covalent intermediate, so turns off VDW
+#  CONSTRAINT::    angle_A:  120.0   10.00 100.00  360.00   1		   
+#  CONSTRAINT::    angle_B:  120.0   20.00 10.00  360.00   1
+#  CONSTRAINT::  torsion_B:  180.0 20.0  10.0   180
+
+CST::END
+
+
+### ligand carboxylate to arg 145 - ionic pair
+## to one oxygen,might need the other
+#6
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: O6 C10 C1
+  TEMPLATE::    ATOM_MAP:   1     residue3: 6cp  
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: Narg
+  TEMPLATE::    ATOM_MAP:   2     residue3: ARG 
+
+  CONSTRAINT::  distanceAB: 3.0   0.5   100.0   0 #covalent intermediate, so turns off VDW
+#  CONSTRAINT::    angle_A:  120.0   20.00 10.00  360.00   1		   
+#  CONSTRAINT::    angle_B:  120.0   10.00 100.00  360.00   1
+#  CONSTRAINT::  torsion_B:  180.0 10.0  100.0   180
+
+CST::END
+#
+###  ligand to the glu 270 - attackes the carbonyl carbon - in this case phosphate
+#7
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: P1 O1 C1
+  TEMPLATE::    ATOM_MAP:   1     residue3: 6cp 
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: OOC
+  TEMPLATE::    ATOM_MAP:   2     residue1: E 
+
+  CONSTRAINT::  distanceAB: 3.0   0.5   100.0  0 #covalent intermediate, so turns off VDW
+#  CONSTRAINT::    angle_B:  120.0   20.00 10.00  360.00   1
+
+CST::END
+
+
+###  tyr 248 to "nitrogen" here it's an oxygen
+#8
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: O3 P1 C3
+  TEMPLATE::    ATOM_MAP:   1     residue3: 6cp 
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: OH
+  TEMPLATE::    ATOM_MAP:   2     residue1: Y 
+
+  CONSTRAINT::  distanceAB: 3.0   0.5   100.0  0 #covalent intermediate, so turns off VDW
+  CONSTRAINT::    angle_A:  109.0   10.00 10.00  360.00   1
+  CONSTRAINT::    angle_B:  120.0   15.00 10.00  360.00   1
+
+CST::END
+
+
+# keep the oxygen to the metal
+#9
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: O8 P1 C3
+  TEMPLATE::    ATOM_MAP:   1     residue3: 6cp 
+
+  TEMPLATE::    ATOM_MAP:   2     atom_name: ZN V1 V2
+  TEMPLATE::    ATOM_MAP:   2     residue3: ZN 
+
+  CONSTRAINT::  distanceAB:  3.1   0.20   100.0   1 #covalent intermediate, so turns off VDW
+#  CONSTRAINT::    angle_A:  120.0   10.00 100.00  360.00   1		   
+#  CONSTRAINT::    angle_B:  120.0   20.00 10.00  360.00   1
+#  CONSTRAINT::  torsion_B:  180.0 20.0  10.0   180
+
+CST::END
+
+### ligand carboxylate to arg 145 - ionic pair
+## to other oxygen
+#10
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: O3 C10 C1
+  TEMPLATE::    ATOM_MAP:   1     residue3: 6cp  
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: Narg
+  TEMPLATE::    ATOM_MAP:   2     residue3: ARG 
+
+  CONSTRAINT::  distanceAB: 3.0   0.5   100.0   0 #covalent intermediate, so turns off VDW
+#  CONSTRAINT::    angle_A:  120.0   20.00 10.00  360.00   1		   
+#  CONSTRAINT::    angle_B:  120.0   10.00 100.00  360.00   1
+#  CONSTRAINT::  torsion_B:  180.0 10.0  100.0   180
+
+CST::END

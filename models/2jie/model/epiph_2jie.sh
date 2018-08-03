@@ -1,0 +1,1 @@
+/home/bertolan/rosetta_new/Rosetta/main/source/bin/rosetta_scripts.default.linuxgccrelease -database /home/bertolan/rosetta_new/Rosetta/main/database @flags -in:file:fasta 2jie.trim -parser:protocol hybridize.xml -out:file:silent 2jie.out -frag3 2jie_.200.3mers -frag9 2jie_.200.9mers

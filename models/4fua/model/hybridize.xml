@@ -1,0 +1,38 @@
+
+<dock_design>
+   <TASKOPERATIONS>
+   </TASKOPERATIONS>
+   <SCOREFXNS>
+       <stage1 weights=stage1 symmetric=0>
+                       <Reweight scoretype=atom_pair_constraint weight=0.5/>
+               </stage1>
+       <stage2 weights=stage2 symmetric=0>
+                       <Reweight scoretype=atom_pair_constraint weight=0.5/>
+               </stage2>
+       <fullatom weights=stage3 symmetric=0>
+                       <Reweight scoretype=atom_pair_constraint weight=0.5/>
+               </fullatom>
+   </SCOREFXNS>
+ <FILTERS>
+   </FILTERS>
+   <MOVERS>
+   <Hybridize name=hybridize fa_cst_file="alignment.grishin.dist_csts.bb_sc.CA" stage1_scorefxn=stage1 stage2_scorefxn=stage2 fa_scorefxn=fullatom batch=1 stage1_increase_cycles=1.0 stage2_increase_cycles=1.0 linmin_only=1>; 
+ <Template pdb="/share/work/bertolan/benchmark/templates/4fua/4c24.pdb.pdb" cst_file="alignment.grishin.dist_csts.CA" weight=1.00 />"; 
+ <Template pdb="/share/work/bertolan/benchmark/templates/4fua/4c25.pdb.pdb" cst_file="alignment.grishin.dist_csts.CA" weight=0.97 />"; 
+ <Template pdb="/share/work/bertolan/benchmark/templates/4fua/2fk5.pdb.pdb" cst_file="alignment.grishin.dist_csts.CA" weight=0.66 />"; 
+ <Template pdb="/share/work/bertolan/benchmark/templates/4fua/1k0w.pdb.pdb" cst_file="alignment.grishin.dist_csts.CA" weight=0.61 />"; 
+ <Template pdb="/share/work/bertolan/benchmark/templates/4fua/1jdi.pdb.pdb" cst_file="alignment.grishin.dist_csts.CA" weight=0.61 />"; 
+ <Template pdb="/share/work/bertolan/benchmark/templates/4fua/2irp.pdb.pdb" cst_file="alignment.grishin.dist_csts.CA" weight=0.60 />"; 
+ <Template pdb="/share/work/bertolan/benchmark/templates/4fua/2opi.pdb.pdb" cst_file="alignment.grishin.dist_csts.CA" weight=0.56 />"; 
+ <Template pdb="/share/work/bertolan/benchmark/templates/4fua/4m6r.pdb.pdb" cst_file="alignment.grishin.dist_csts.CA" weight=0.49 />"; 
+ <Template pdb="/share/work/bertolan/benchmark/templates/4fua/4xxf.pdb.pdb" cst_file="alignment.grishin.dist_csts.CA" weight=0.48 />"; 
+ <Template pdb="/share/work/bertolan/benchmark/templates/4fua/3ocr.pdb.pdb" cst_file="alignment.grishin.dist_csts.CA" weight=0.47 />"; 
+
+       </Hybridize>
+   </MOVERS>
+   <APPLY_TO_POSE>
+   </APPLY_TO_POSE>
+   <PROTOCOLS>
+       <Add mover=hybridize/>
+   </PROTOCOLS>
+</dock_design>"; 

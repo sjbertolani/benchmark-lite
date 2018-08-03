@@ -1,0 +1,85 @@
+# for enzdes benchmark
+# SJB 1-27-2016
+# add 2 for oxyanion
+# add 1 for aps to his
+#Ser 87 nucleophile
+
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: P1 O2 C1
+  TEMPLATE::    ATOM_MAP:   1     residue3: 1hq
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: OH
+  TEMPLATE::    ATOM_MAP:   2     residue1: S
+
+  CONSTRAINT::  distanceAB: 1.6   0.10   100.0   1 #covalent intermediate, so turns off VDW 
+   CONSTRAINT::    angle_A:  109.0   10.00 10.00  360.00   1
+CONSTRAINT::    angle_B:  120.0   15.00 10.00  360.00   1
+
+    
+CST::END
+
+# HIS 286 to SER 87
+
+CST::BEGIN
+  TEMPLATE::    ATOM_MAP:   1   atom_type: OH
+  TEMPLATE::    ATOM_MAP:   1   residue1: S
+
+  TEMPLATE::    ATOM_MAP:   2   atom_type: Ntrp
+  TEMPLATE::    ATOM_MAP:   2   residue1: H
+
+  CONSTRAINT:: distanceAB: 3.0 0.50 100.0 0
+  CONSTRAINT::    angle_B:  120.0   30.00 10.00  360.00   1
+    CONSTRAINT::  torsion_B:  180.0 30.0  10.0   180
+    
+CST::END
+
+## ASP264 TO HIS286
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_type: Nhis
+  TEMPLATE::    ATOM_MAP:   1     residue1: H
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: OOC
+  TEMPLATE::    ATOM_MAP:   2     residue1: D
+
+  CONSTRAINT::  distanceAB: 3.0   0.50   100.0   0
+#   CONSTRAINT::    angle_A:  109.0   15.00 100.00  360.00   1
+#   CONSTRAINT::    angle_B:  120.0   15.00 10.00  360.00   1
+#     CONSTRAINT::    torsion_B:  180.0   30.00 10.00  360.00   1	
+    
+CST::END
+
+
+## oxyanion hole leu 17
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: O1 P1 O2
+  TEMPLATE::    ATOM_MAP:   1     residue3: 1hq
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: Nbb
+  TEMPLATE::    ATOM_MAP:   2     residue1: L
+
+  CONSTRAINT::  distanceAB: 3.0   0.50   100.0   0
+   CONSTRAINT::    angle_A:  120.0   15.00 10.00  360.00   1
+#   CONSTRAINT::    angle_B:  120.0   15.00 10.00  360.00   1
+#     CONSTRAINT::    torsion_B:  180.0   30.00 10.00  360.00   1	
+    
+CST::END
+
+
+## oxyanion hole GLN88
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: O1 P1 O2
+  TEMPLATE::    ATOM_MAP:   1     residue3: 1hq
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: Nbb
+  TEMPLATE::    ATOM_MAP:   2     residue1: Q
+
+  CONSTRAINT::  distanceAB: 3.0   0.50   100.0   0
+#   CONSTRAINT::    angle_A:  109.0   15.00 10.00  360.00   1
+#   CONSTRAINT::    angle_B:  120.0   15.00 10.00  360.00   1
+#     CONSTRAINT::    torsion_B:  180.0   30.00 10.00  360.00   1	
+    
+CST::END

@@ -1,0 +1,114 @@
+## for enzdes benchmark
+#  SJB 1-6-2016 2jaj
+#  
+
+#constraint to CYS #273 
+# S- attacks the C-gamma of the substrate
+CST::BEGIN
+  TEMPLATE::   ATOM_MAP: 1 atom_name: C5 N4 N2
+  TEMPLATE::   ATOM_MAP: 1 residue3: 2ja
+
+  TEMPLATE::   ATOM_MAP: 2 atom_type: S
+  TEMPLATE::   ATOM_MAP: 2 residue1:  C
+
+  CONSTRAINT:: distanceAB:   3.3   0.50   100.0  0      ## 4th column means not covalent, so uses the VDW term 
+  # 90 - planar making an attack to c gamm
+  #CONSTRAINT::    angle_A:  90.0   15.00 10.00  360.00   1
+  # 90 thioether
+  CONSTRAINT::    angle_B:  100.0   15.00 10.00  360.00   1
+
+CST::END
+
+#constraint to HIS residue #172
+# protonaes the leaving group amine
+CST::BEGIN
+  TEMPLATE::   ATOM_MAP: 1 atom_name: N4 C5 N2
+  TEMPLATE::   ATOM_MAP: 1 residue3: 2ja
+
+  TEMPLATE::   ATOM_MAP: 2 atom_type: Nhis
+  TEMPLATE::   ATOM_MAP: 2 residue1:  H
+
+  CONSTRAINT:: distanceAB:   3.0   0.50   100.0  0     0
+#  CONSTRAINT::    angle_B:  120.0   20.00 100.00  360.00   1
+#    CONSTRAINT::  torsion_B:  180.0 10.0  100.0   180
+    
+CST::END
+
+
+# asp 78 to nitrogens found in 2jaj, 2c6z, 3i4a
+#
+CST::BEGIN
+  TEMPLATE::   ATOM_MAP: 1 atom_name: N1 C5 N4
+  TEMPLATE::   ATOM_MAP: 1 residue3: 2ja
+
+  TEMPLATE::   ATOM_MAP: 2 atom_name: OD2 CG CB
+  TEMPLATE::   ATOM_MAP: 2 residue1:  D
+
+  CONSTRAINT:: distanceAB:   3.0   0.50   100.0  1     0
+  CONSTRAINT::    angle_A:  120.0   10.00 10.00  360.00   1
+  CONSTRAINT::    angle_B:  120.0   20.00 10.00  360.00   1
+    CONSTRAINT::  torsion_B:  180.0 25.0  10.0   180   
+CST::END
+
+# asp 78 to nitrogens found in 2jaj, 2c6z, 3i4a
+#
+CST::BEGIN
+  TEMPLATE::   ATOM_MAP: 1 atom_name: N4 C5 N2
+  TEMPLATE::   ATOM_MAP: 1 residue3: 2ja
+
+  TEMPLATE::   ATOM_MAP: 2 atom_name: OD1 CG CB
+  TEMPLATE::   ATOM_MAP: 2 residue1:  D
+
+  CONSTRAINT:: distanceAB:   3.0   0.50   100.0  1     0
+  CONSTRAINT::    angle_A:  120.0   10.00 10.00  360.00   1
+  CONSTRAINT::    angle_B:  120.0   10.00 10.00  360.00   1
+    CONSTRAINT::  torsion_B:  180.0 25.0  10.0   180   
+CST::END
+
+#asp 268 to the n2
+#
+CST::BEGIN
+  TEMPLATE::   ATOM_MAP: 1 atom_name: N2 C5 N1
+  TEMPLATE::   ATOM_MAP: 1 residue3: 2ja
+
+  TEMPLATE::   ATOM_MAP: 2 atom_type: OCbb
+  TEMPLATE::   ATOM_MAP: 2 residue1: D
+
+  CONSTRAINT:: distanceAB:   3.0   0.50   100.0  0     0
+
+CST::END
+
+
+#constraint to CYS #273 
+# S- attacks the C-gamma of the substrate to other angles
+CST::BEGIN
+  TEMPLATE::   ATOM_MAP: 1 atom_name: C5 N2 N4
+  TEMPLATE::   ATOM_MAP: 1 residue3: 2ja
+
+  TEMPLATE::   ATOM_MAP: 2 atom_type: S
+  TEMPLATE::   ATOM_MAP: 2 residue1:  C
+
+  CONSTRAINT:: distanceAB:   3.3   0.50   100.0  0      ## 4th column means not covalent, so uses the VDW term 
+  # 90 - planar making an attack to c gamm
+  CONSTRAINT::    angle_A:  90.0   15.00 10.00  360.00   1
+  # 90 thioether
+  CONSTRAINT::    angle_B:  100.0   15.00 10.00  360.00   1
+
+CST::END
+
+#constraint to CYS #273 
+# S- attacks the C-gamma of the substrate to other angles
+CST::BEGIN
+  TEMPLATE::   ATOM_MAP: 1 atom_name: C5 N1 N2
+  TEMPLATE::   ATOM_MAP: 1 residue3: 2ja
+
+  TEMPLATE::   ATOM_MAP: 2 atom_type: S
+  TEMPLATE::   ATOM_MAP: 2 residue1:  C
+
+  CONSTRAINT:: distanceAB:   3.3   0.50   100.0  0      ## 4th column means not covalent, so uses the VDW term 
+  # 90 - planar making an attack to c gamm
+  CONSTRAINT::    angle_A:  90.0   15.00 10.00  360.00   1
+  # 90 thioether
+  CONSTRAINT::    angle_B:  100.0   15.00 10.00  360.00   1
+
+CST::END

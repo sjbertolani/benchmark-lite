@@ -1,0 +1,19 @@
+HETATM    1 ZN    ZN A 401      -1.452  31.457  31.070  1.00  6.39          ZN  
+HETATM    2  N1  HPY A 411      -4.582  31.787  28.322  1.00  8.06           N  
+HETATM    3  C2  HPY A 411      -5.046  31.706  29.555  1.00  8.22           C  
+HETATM    4  O2  HPY A 411      -5.835  32.643  29.983  1.00  8.11           O  
+HETATM    5  N3  HPY A 411      -4.748  30.715  30.363  1.00  7.84           N  
+HETATM    6  C4  HPY A 411      -3.810  29.646  30.044  1.00  7.39           C  
+HETATM    7  O4  HPY A 411      -2.642  29.796  30.941  1.00  7.41           O  
+HETATM    8  C5  HPY A 411      -3.420  29.707  28.631  1.00  8.06           C  
+HETATM    9  C6  HPY A 411      -3.787  30.697  27.849  1.00  7.90           C  
+CONECT    1    7
+CONECT    2    3    9
+CONECT    3    2    4    5
+CONECT    4    3
+CONECT    5    3    6
+CONECT    6    5    7    8
+CONECT    7    1    6
+CONECT    8    6    9
+CONECT    9    2    8
+END

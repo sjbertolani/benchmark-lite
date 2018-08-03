@@ -1,0 +1,105 @@
+# for enzdes benchmark
+#  1jcl 102,167,201
+# SJB 1-19-2016
+
+# 167 nucleophiles Lys 167
+#1
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: C5 C4 C3
+  TEMPLATE::    ATOM_MAP:   1     residue3: 1jc
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: Nlys 
+  TEMPLATE::    ATOM_MAP:   2     residue1: K 
+
+  CONSTRAINT::  distanceAB: 1.5   0.10   100.0   1 #covalent intermediate, so turns off VDW
+  CONSTRAINT::    angle_A:  109.0   10.00 10.00  360.00   1
+  CONSTRAINT::    angle_B:  120.0   10.00 10.00  360.00   1
+#  CONSTRAINT::  torsion_B:  180.0 30.0  10.0   180
+
+CST::END
+
+
+# 167 nucleophiles Lys 167 - to oxygen angle
+#2
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: C5 O7 C4
+  TEMPLATE::    ATOM_MAP:   1     residue3: 1jc
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: Nlys 
+  TEMPLATE::    ATOM_MAP:   2     residue1: K 
+
+  CONSTRAINT::  distanceAB: 1.5   0.10   100.0   1 #covalent intermediate, so turns off VDW
+  CONSTRAINT::    angle_A:  109.0   10.00 100.00  360.00   1
+#  CONSTRAINT::    angle_B:  120.0   10.00 10.00  360.00   1
+#  CONSTRAINT::  torsion_B:  180.0 30.0  10.0   180
+
+CST::END
+
+
+## Asp 102 to Lys 137
+#3
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_type: OOC
+    TEMPLATE::    ATOM_MAP:   1     residue3: ASP
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: Nlys
+    TEMPLATE::    ATOM_MAP:   2     residue1: K
+
+  CONSTRAINT::  distanceAB: 3.0   0.50   100.0   0
+    CONSTRAINT::    angle_A:  120.0   10.00 10.00  360.00   1
+    #  CONSTRAINT::  torsion_B:  180.0 10.0  100.0   180
+
+CST::END
+
+## Asp 102 to Lys 201
+
+CST::BEGIN
+#4
+  TEMPLATE::    ATOM_MAP:   1     atom_type: OOC
+    TEMPLATE::    ATOM_MAP:   1     residue3: ASP
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: Nlys
+    TEMPLATE::    ATOM_MAP:   2     residue1: K
+
+  CONSTRAINT::  distanceAB: 3.0   0.50   100.0   0
+    CONSTRAINT::    angle_A:  120.0   10.00 10.00  360.00   1
+    #  CONSTRAINT::  torsion_B:  180.0 10.0  100.0   180
+
+CST::END
+
+
+## Lys 201 uses water to interact w substrate
+#5
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name:  C5 C4 C3
+    TEMPLATE::    ATOM_MAP:   1     residue3: 1jc
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: Nlys
+    TEMPLATE::    ATOM_MAP:   2     residue1: K
+
+  CONSTRAINT::  distanceAB: 4.3   0.50   100.0   0 #covalent intermediate, so turns off VDW
+#    CONSTRAINT::    angle_B:  120.0   10.00 100.00  360.00   1
+    #  CONSTRAINT::  torsion_B:  180.0 10.0  100.0   180
+
+CST::END
+
+# cys 47 near oxygen, acts as base, see xtal paper si for comparison to other structs.
+#6
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: O7 C5 C4
+  TEMPLATE::    ATOM_MAP:   1     residue3: 1jc
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: S 
+  TEMPLATE::    ATOM_MAP:   2     residue3: CYS 
+
+  CONSTRAINT::  distanceAB: 3.0   0.50   100.0   1 #covalent intermediate, so turns off VDW
+  CONSTRAINT::    angle_B:  100.0   15.00 10.00  360.00   1
+#  CONSTRAINT::    angle_B:  120.0   10.00 10.00  360.00   1
+#  CONSTRAINT::  torsion_B:  180.0 30.0  10.0   180
+
+CST::END

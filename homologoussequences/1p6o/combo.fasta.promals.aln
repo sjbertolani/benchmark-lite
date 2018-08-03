@@ -1,0 +1,143 @@
+CLUSTAL format multiple sequence alignment by PROMALS
+
+
+2hvv_A   MGSSHHHHHHSSGLVPRGSHMASMTGGQQMGRGSMTNRLSWQDYFMANAELISKRSTC---NRAYVGAVL
+1vq2_A   ---------------------------------------MKASTVLQIAYLVSQESKC---CSWKVGAVI
+2hxv_A   MG----------------------------SDKIHHHHHHMYETFMKRAIELAKKGLGRVNPNPPVGAVV
+2a8n_A   --------------------------------------MAERTHFMELALVEARSAGER--DEVPIGAVL
+3dh1_A   M---HHHHHHSS-------------GVDLGTENLYFQSMEETEKWMEEAMHMAKEALEN--TEVPVGCLM
+3ocq_A   M---PPAF--------------------ITGVTSLSDVELDHEYWMRHALTLAKRAWDE--REVPVGAVL
+1z3a_A   M---------------------------------LSEVEFSHEYWMRHALTLAKRAWDE--REVPVGAVL
+1wwr_A   MGSSHHHHHH-------------------SSGLVPRGSHMGKEYFLKVALREAKRAFEK--GEVPVGAII
+2b3j_A   -----------------------------------GSHMTNDIYFMTLAIEEAKKAAQL--GEVPIGAII
+2nx8_A   ME--------------------------LGESFLMPYSLEEQTYFMQEALKESEKSLQK--AEIPIGCVI
+1tiy_A   ---------------------------------------MNHETFLKRAVTLACEGVNA-GIGGPFGAVI
+1wkq_A   MHHHHHHA-------------------------------MNHETFLKRAVTLACEGVNA-GIGGPFGAVI
+1p6o     ----------------------------GSSMVTGGMASKWDQKGMDIAYEEAALGYKE--GGVPIGGCL
+1ox7_A   ----------------------------GSSMVTGGMASKWDQKGMDIAYEEAALGYKE--GGVPIGGCL
+1ysd_A   ----------------------------GSSMVTGGMASKWDQKGMDIAYEEALLGYKE--GGVPIGGCL
+1ysb_A   ----------------------------GSSMVTGGMASKWDQKGMDIAYEEALLGYKE--GGVPIGGCL
+2o3k_A   ----------------------------GSSMVTGGMASKWDQKGMDIAYEEALLGYKE--GGVPIGGCL
+1uaq_A   -------------------------------MVTGGMASKWDQKGMDIAYEEAALGYKE--GGVPIGGCL
+
+
+2hvv_A   VKN--NRIIATGYNGGVADTDNCDDVGH--------------------------------------EMED
+1vq2_A   EKN--GRIISTGYNGSPAGGVNCCDYAAEQGWLLNKPKHAIIQGHKPECVSFGSTDRFVLAKEHRSAHSE
+2hxv_A   VKD--GRIIAEGFHPY------------------------------------------------------
+2a8n_A   VLD--GRVIARSGNRT---REL------------------------------------------------
+3dh1_A   VYN--NEVVGKGRNEV---NQT------------------------------------------------
+3ocq_A   VHN--HRVIGEGWNRP---IGR------------------------------------------------
+1z3a_A   VHN--NRVIGEGWNRP---IGR------------------------------------------------
+1wwr_A   VKE--GEIISKAHNSV---EEL------------------------------------------------
+2b3j_A   TKD--DEVIARAHNLR---ETL------------------------------------------------
+2nx8_A   VKD--GEIIGRGHNAR---EES------------------------------------------------
+1tiy_A   VKD--GAIIAEGQNNV---TTS------------------------------------------------
+1wkq_A   VKD--GAIIAEGQNNV---TTS------------------------------------------------
+1p6o     INNKDGSVLGRGHNMR---FQK------------------------------------------------
+1ox7_A   INNKDGSVLGRGHNMR---FQK------------------------------------------------
+1ysd_A   INNKDGSVLGRGHNMR---FQK------------------------------------------------
+1ysb_A   INNKDGSVLGRGHNMR---FQK------------------------------------------------
+2o3k_A   INNKDGSVLGRGHNMR---FQK------------------------------------------------
+1uaq_A   INNKDGSVLGRGHNMR---FQK------------------------------------------------
+
+
+2hvv_A   GHCIRTVHAEMNALIQCAKEG--------ISANNTEIYVTHFPCI------NCTKALLQAGVKKITYNTA
+1vq2_A   WSSKNEIHAELNAILFAAENG--------SSIEGATMYVTLSPCP------DCAKAIAQSGIKKLVYCET
+2hxv_A   ---FGGPHAERMAIESARKK--------GEDLRGATLIVTLEPCDHHGKTPPCTDLIIESGIKTVVIGTR
+2a8n_A   --NDVTAHAEIAVIRMACEALG------QERLPGADLYVTLEPCT------MCAAAISFARIRRLYYGAQ
+3dh1_A   --KNATRHAEMVAIDQVLDWCRQSGKSPSEVFEHTVLYVTVEPCI------MCAAALRLMKIPLVVYGCQ
+3ocq_A   --HDPTAHAEIMALRQGGLVLQ------NYRLLDTTLYVTLEPCV------MCAGAMVHSRIGRVVFGAR
+1z3a_A   --HDPTAHAEIMALRQGGLVMQ------NYRLIDATLYVTLEPCV------MCAGAMIHSRIGRVVFGAR
+1wwr_A   --KDPTAHAEMLAIKEACRRLN------TKYLEGCELYVTLEPCI------MCSYALVLSRIEKVIFSAL
+2b3j_A   --QQPTAHAEHIAIERAAKVLG------SWRLEGCTLYVTLEPCV------MCAGTIVMSRIPRVVYGAD
+2nx8_A   --NQAIMHAEMMAINEANAHEG------NWRLLDTTLFVTIEPCV------MCSGAIGLARIPHVIYGAS
+1tiy_A   --NDPTAHAEVTAIRKACKVLG------AYQLDDCILYTSCEPCP------MCLGAIYWARPKAVFYAAE
+1wkq_A   --NDPTAHAEVTAIRKACKVLG------AYQLDDCILYTSCEPCP------MCLGAIYWARPKAVFYAAE
+1p6o     --GSATLHGEISTLENCGRLE-------GKVYKDTTLYTTLSPCD------MCTGAIIMYGIPRCVVGEN
+1ox7_A   --GSATLHGEISTLENCGRLE-------GKVYKDTTLYTTLSPCD------MCTGAIIMYGIPRCVVGEN
+1ysd_A   --GSATLHGEISTLENCGRLE-------GKVYKDTTLYTTLSPCD------MCTGAIIMYGIPRCVVGEN
+1ysb_A   --GSATLHGEISTLENCGRLE-------GKVYKDTTLYTTLSPCD------MCTGAIIMYGIPRCVIGEN
+2o3k_A   --GSATLHGEISTLENCGRLE-------GKVYKDTTLYTTLSPCE------MCTGAIIMYGIPRCVIGEN
+1uaq_A   --GSATLHGEISTLENCGRLE-------GKVYKDTTLYTTLSPCD------MCTGAIIMYGIPRCVVGEN
+
+
+2hvv_A   YR-----IHPFAI---ELMTQ------KEVEYVQHD-VPRV--KL----GEK------------------
+1vq2_A   YD-----KNKPGWD--DILRN------AGIEVFNVP-KKNLNKLNWENINEFCGE---------------
+2hxv_A   DPN---PVSGNGV---EKFRN------HGIEVIEGVLEEEVKKLCEFFITYVTKKRPFVALKYASTLDGK
+2a8n_A   DP-----KGGAVESGVRFFSQPT--CHHAPDVYSGLAESESAEILRQF----------------------
+3dh1_A   NE-----RFGGCGSVLNIASADLPNTGRPFQCIPGYRAEEAVEMLKTFYKQENPNAPKSKVRK-------
+3ocq_A   DA-----KTGAAGSLIDVLHHPG--MNHRVEIIEGVLRDECATLLSDFFRMRRQEIKALKKAD--RAEGA
+1z3a_A   DA-----KTGAAGSLMDVLHHPG--MNHRVEITEGILADECAALLSDFFRMRRQEIKAQKKAQ--SSTD-
+1wwr_A   DK-----KHGGVVSVFNILDEPT--LNHRVKWEYYP-LEEASELLSEFFKKLRNNII-------------
+2b3j_A   DP-----KGGCSGSLMNLLQQSN--FNHRAIVDKGVLKEACSTLLTTFFKNLRANKKSTN----------
+2nx8_A   NQ-----KFGGVDSLYQILTDER--LNHRVQVERGLLAADCANIMQTFFRQGRERKKIAKHLIKEQSDPF
+1tiy_A   HTDAAEAGFDDSFIYKEI-DKPA--EERTIPFYQ-VTLTEHLSPFQAWRNFANKKEYLEHHHHHH-----
+1wkq_A   HTDAAEAGFDDSFIYKEI-DKPA--EERTIPFYQ-VTLTEHLSPFQAWRNFANKKEY-------------
+1p6o     VN-----FKSKGE---KYLQT------RGHEVVVVD-DERCKKIMKQFIDERPQDWFEDIGE--------
+1ox7_A   VN-----FKSKGE---KYLQT------RGHEVVVVD-DERCKKIMKQFIDERPQDWFEDIGE--------
+1ysd_A   VN-----FKSKGE---KYLQT------RGHEVVVVD-DERCKKLMKQFIDERPQDWFEDIGE--------
+1ysb_A   VN-----FKSKGE---KYLQT------RGHEVVVVD-DERCKKLMKQFIDERPQDWFEDIGE--------
+2o3k_A   VN-----FKSKGE---KYLQT------RGHEVVVVD-DERCKKLMKQFIDERPQDWFEDIGE--------
+1uaq_A   VN-----FKSKGE---KYLQT------RGHEVVVVD-DERCKKIMKQFIDERPQDWFEDIGE--------
+
+
+2hvv_A   ----------------------------------------------------------------------
+1vq2_A   ----------------------------------------------------------------------
+2hxv_A   IADHRGDSKWITDKLRFKVHEMRNIYSAVLVGAGTVLKDNPQLTCRLKEGRNPVRVILDRKGVLSGKVFR
+2a8n_A   ----------------------------------------------------------------------
+3dh1_A   ----------------------------------------------------------------------
+3ocq_A   GPAV------------------------------------------------------------------
+1z3a_A   ----------------------------------------------------------------------
+1wwr_A   ----------------------------------------------------------------------
+2b3j_A   ----------------------------------------------------------------------
+2nx8_A   D---------------------------------------------------------------------
+1tiy_A   ----------------------------------------------------------------------
+1wkq_A   ----------------------------------------------------------------------
+1p6o     ----------------------------------------------------------------------
+1ox7_A   ----------------------------------------------------------------------
+1ysd_A   ----------------------------------------------------------------------
+1ysb_A   ----------------------------------------------------------------------
+2o3k_A   ----------------------------------------------------------------------
+1uaq_A   ----------------------------------------------------------------------
+
+
+2hvv_A   ----------------------------------------------------------------------
+1vq2_A   ----------------------------------------------------------------------
+2hxv_A   VFEENARVIVFTESEEAEYPPHVEKALSDCSVESILRNLYERDIDSVLVEGGSKVFSEFLDHADVVFGFY
+2a8n_A   ----------------------------------------------------------------------
+3dh1_A   ----------------------------------------------------------------------
+3ocq_A   ----------------------------------------------------------------------
+1z3a_A   ----------------------------------------------------------------------
+1wwr_A   ----------------------------------------------------------------------
+2b3j_A   ----------------------------------------------------------------------
+2nx8_A   ----------------------------------------------------------------------
+1tiy_A   ----------------------------------------------------------------------
+1wkq_A   ----------------------------------------------------------------------
+1p6o     ----------------------------------------------------------------------
+1ox7_A   ----------------------------------------------------------------------
+1ysd_A   ----------------------------------------------------------------------
+1ysb_A   ----------------------------------------------------------------------
+2o3k_A   ----------------------------------------------------------------------
+1uaq_A   ----------------------------------------------------------------------
+
+
+2hvv_A   -----------------------------------------------
+1vq2_A   -----------------------------------------------
+2hxv_A   STKIFGKGLDVFSGYLSDVSVPPKFKVVNVEFSDSEFLVEMRPCSRE
+2a8n_A   -----------------------------------------------
+3dh1_A   -----------------------------------------------
+3ocq_A   -----------------------------------------------
+1z3a_A   -----------------------------------------------
+1wwr_A   -----------------------------------------------
+2b3j_A   -----------------------------------------------
+2nx8_A   -----------------------------------------------
+1tiy_A   -----------------------------------------------
+1wkq_A   -----------------------------------------------
+1p6o     -----------------------------------------------
+1ox7_A   -----------------------------------------------
+1ysd_A   -----------------------------------------------
+1ysb_A   -----------------------------------------------
+2o3k_A   -----------------------------------------------
+1uaq_A   -----------------------------------------------
+
+

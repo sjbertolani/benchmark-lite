@@ -1,0 +1,116 @@
+# for enzdes benchmark
+# SJB 4-9-17
+
+#
+# There are metal coordinating residues in this structure
+# the metal coordination is specified first, then the
+# constraints for the docking are added. The metal will be docked in
+# what we call the apo protein
+#
+# Metal binding are His 92, HIS 94, HIS 155
+
+
+### his 92
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: ZN V1 V2
+  TEMPLATE::    ATOM_MAP:   1     residue3: ZN 
+
+  TEMPLATE::    ATOM_MAP:   2     atom_name: NE2 CD2 CG
+  TEMPLATE::    ATOM_MAP:   2     residue1: H 
+
+  CONSTRAINT::  distanceAB: 2.0   0.20   100.0   1 #covalent intermediate, so turns off VDW
+#  CONSTRAINT::    angle_A:  120.0   10.00 100.00  360.00   1		   
+  CONSTRAINT::    angle_B:  120.0   10.00 10.00  360.00   1
+  CONSTRAINT::  torsion_B:  180.0 10.0  10.0   180
+
+CST::END
+
+
+#### HIS 94
+
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: ZN V1 V2
+  TEMPLATE::    ATOM_MAP:   1     residue3: ZN 
+
+  TEMPLATE::    ATOM_MAP:   2     atom_name: NE2 CD2 CG
+  TEMPLATE::    ATOM_MAP:   2     residue1: H 
+
+  CONSTRAINT::  distanceAB: 2.0   0.20   100.0   1 #covalent intermediate, so turns off VDW
+#  CONSTRAINT::    angle_A:  120.0   10.00 100.00  360.00   1		   
+  CONSTRAINT::    angle_B:  120.0   20.00 10.00  360.00   1
+  CONSTRAINT::  torsion_B:  -180.0 10.0  10.0   180
+
+CST::END
+
+### HIS 155
+
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: ZN V1 V2
+  TEMPLATE::    ATOM_MAP:   1     residue3: ZN 
+
+  TEMPLATE::    ATOM_MAP:   2     atom_name: NE2 CD2 CG
+  TEMPLATE::    ATOM_MAP:   2     residue1: H
+
+  CONSTRAINT::  distanceAB: 2.0   0.20   100.0   1 #covalent intermediate, so turns off VDW
+#  CONSTRAINT::    angle_A:  120.0   10.00 100.00  360.00   1		   
+  CONSTRAINT::    angle_B:  120.0   20.00 10.00  360.00   1
+  CONSTRAINT::  torsion_B:  -180.0 10.0  10.0   180
+
+CST::END
+
+### 4fu ligand to Zn
+### Metal to ligand oxygen X2 to the metal
+
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: O3 C2 C1
+  TEMPLATE::    ATOM_MAP:   1     residue3: 4fu
+
+  TEMPLATE::    ATOM_MAP:   2     atom_name: ZN V1 V2
+  TEMPLATE::    ATOM_MAP:   2     residue3: ZN 
+
+  CONSTRAINT::  distanceAB: 2.2   0.1   100.0   1 #covalent intermediate, so turns off VDW
+  CONSTRAINT::    angle_A:  109.0   10.00 10.00  360.00   1		   
+  CONSTRAINT::  torsion_A:  -180.0 10.0  10.0   180
+
+
+CST::END
+
+###  ligand to the Zn
+
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: O4 N1 C2
+  TEMPLATE::    ATOM_MAP:   1     residue3: 4fu 
+
+  TEMPLATE::    ATOM_MAP:   2     atom_name: ZN V1 V2
+  TEMPLATE::    ATOM_MAP:   2     residue3: ZN
+
+  CONSTRAINT::  distanceAB: 1.9   0.1   100.0   1 #covalent intermediate, so turns off VDW
+
+  CONSTRAINT::    angle_A:  120.0   10.00 10.00  360.00   1
+  CONSTRAINT::  torsion_A:  0.0 10.0  10.0   180
+
+
+CST::END
+
+
+###  ligand N (takes place of the carbon that would be deprotonated by GLU) to GLU 73
+
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: N1 C2 C1
+  TEMPLATE::    ATOM_MAP:   1     residue3: 4fu 
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: OOC 
+  TEMPLATE::    ATOM_MAP:   2     residue1: E   
+
+  CONSTRAINT::  distanceAB: 3.0   0.50   100.0   0 #covalent intermediate, so turns off VDW
+#  CONSTRAINT::    angle_B:  120.0   10.00 100.00  360.00   1
+
+
+CST::END
+

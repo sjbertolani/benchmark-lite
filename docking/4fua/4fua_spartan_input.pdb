@@ -1,0 +1,23 @@
+HETATM    1 ZN    ZN A 216      75.435  48.519  76.808  1.00 12.95          ZN  
+HETATM    2  P   PGH A 217      71.766  43.125  76.500  1.00  5.05           P  
+HETATM    3  O1P PGH A 217      72.190  44.539  76.908  1.00  8.75           O  
+HETATM    4  O2P PGH A 217      70.418  43.360  75.817  1.00  4.95           O  
+HETATM    5  O3P PGH A 217      71.716  42.221  77.727  1.00  4.15           O1-
+HETATM    6  O4P PGH A 217      72.829  42.631  75.427  1.00  8.44           O  
+HETATM    7  C1  PGH A 217      73.976  46.149  77.186  1.00 12.50           C  
+HETATM    8  O1  PGH A 217      75.116  46.493  77.484  1.00 10.09           O  
+HETATM    9  C2  PGH A 217      73.374  44.813  77.644  1.00 11.20           C  
+HETATM   10  N2  PGH A 217      73.169  46.948  76.448  1.00 14.43           N  
+HETATM   11  O2  PGH A 217      73.763  48.106  76.056  1.00 16.40           O  
+CONECT    1    8   11
+CONECT    2    3    4    5    6
+CONECT    3    2    9
+CONECT    4    2
+CONECT    5    2
+CONECT    6    2
+CONECT    7    8    9   10
+CONECT    8    1    7
+CONECT    9    3    7
+CONECT   10    7   11
+CONECT   11    1   10
+END

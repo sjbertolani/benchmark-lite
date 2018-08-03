@@ -1,0 +1,11 @@
+promals command:
+/home/bertolan/software/promals_package/bin/promals_c /share/work/bertolan/benchmark/homologoussequences/2gke/combo.fasta -blast_dir /share/work/bertolan/benchmark/homologoussequences/2gke/combo.fasta_blast  > /share/work/bertolan/benchmark/homologoussequences/2gke/combo.fasta.prmls.oUTpUT
+
+output alignment file is: /share/work/bertolan/benchmark/homologoussequences/2gke/combo.fasta.promals.aln
+blast intermediate files are in: /share/work/bertolan/benchmark/homologoussequences/2gke/combo.fasta_blast
+
+html file command:
+python /home/bertolan/software/promals_package/bin/progress_for_web.py /share/work/bertolan/benchmark/homologoussequences/2gke/combo.fasta.promals.aln /share/work/bertolan/benchmark/homologoussequences/2gke/combo.fasta.prmls.oUTpUT -cutoff 5 -resnum 1 -caa_freq 0.800000
+
+output html alignment file is: /share/work/bertolan/benchmark/homologoussequences/2gke/combo.fasta.promals.aln.html
+

@@ -1,0 +1,45 @@
+# for enzdes benchmark
+# SJB 1-25-2016
+
+# CYS 73 deprotonate stereocenter carbon
+
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: C7 C5 O2
+  TEMPLATE::    ATOM_MAP:   1     residue3: 2gk
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: S
+  TEMPLATE::    ATOM_MAP:   2     residue1: C 
+
+# slightly looser
+  CONSTRAINT::  distanceAB: 3.2   0.50   100.0   1 #covalent intermediate, so turns off VDW 
+  CONSTRAINT::  angle_B: 90.0 20.0  10.0   360
+
+CST::END
+
+# CYS 217 protonates the stereocenter
+
+CST::BEGIN
+  TEMPLATE::    ATOM_MAP:   1   atom_name: C7 C5 O2
+  TEMPLATE::    ATOM_MAP:   1   residue3: 2gk
+
+  TEMPLATE::    ATOM_MAP:   2   atom_type: S
+  TEMPLATE::    ATOM_MAP:   2   residue1: C
+
+# slightly looser
+  CONSTRAINT:: distanceAB: 3.2 0.50 100.0 1
+  CONSTRAINT::  angle_B: 90.0 20.0  10.0   360
+CST::END
+
+# GLU 208 neutralizes/ orients the charge on the nh3+
+
+CST::BEGIN
+  TEMPLATE::    ATOM_MAP:   1   atom_name: N2 C7 C8
+  TEMPLATE::    ATOM_MAP:   1   residue3: 2gk
+
+  TEMPLATE::    ATOM_MAP:   2   atom_type: OOC
+  TEMPLATE::    ATOM_MAP:   2   residue1: E
+
+  CONSTRAINT:: distanceAB: 3.0 0.50 100.0 1
+
+CST::END

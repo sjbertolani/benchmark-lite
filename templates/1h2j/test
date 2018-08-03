@@ -1,0 +1,2 @@
+$ROBETTA/cm_scripts/bin/predict_distances_multi.pl alignment.grishin.trim fasta.trim  -min_seqsep 5 -max_dist 10 -aln_format \
+grishin -max_e_value 10000 -pdb_dir $PWD

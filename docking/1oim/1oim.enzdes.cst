@@ -1,0 +1,38 @@
+# for enzdes benchmark
+# SJB 1-27-2016
+
+# Glu 351 to anomeric carbon (nucleophilic attack)
+
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: C1 C2 O2
+  TEMPLATE::    ATOM_MAP:   1     residue3: 1oi
+
+  TEMPLATE::    ATOM_MAP:   2     atom_name: OE2 CD CG
+  TEMPLATE::    ATOM_MAP:   2     residue1: E 
+
+  CONSTRAINT::  distanceAB: 3.0   0.50   100.0   0 #covalent intermediate, so turns off VDW 
+#  CONSTRAINT::    angle_A:  109.0   10.00 10.00  360.00   1
+  CONSTRAINT::    angle_B:  120.0   10.00 10.00  360.00   1
+
+  CONSTRAINT::  torsion_AB:  -50.0 30.0  10.0   360
+  CONSTRAINT::  torsion_B:  180.0 30.0  10.0   180
+    
+
+
+CST::END
+
+## GLU 166 to leaving group oxygen, not in the ts inhibitor, skip
+
+# Tyr 295 to GLU 351 
+
+CST::BEGIN
+  TEMPLATE::    ATOM_MAP:   1   atom_name: OE2 CD CG
+  TEMPLATE::    ATOM_MAP:   1   residue1: E
+
+  TEMPLATE::    ATOM_MAP:   2   atom_type: OH
+  TEMPLATE::    ATOM_MAP:   2   residue1: Y
+
+  CONSTRAINT:: distanceAB: 3.0 0.50 100.0 0
+  CONSTRAINT::    angle_B:  120.0   20.00 10.00  360.00   1
+CST::END

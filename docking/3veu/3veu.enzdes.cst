@@ -1,0 +1,57 @@
+## for enzdes benchmark
+#  SJB 1-6-2016 3veu
+#  
+
+#constraint to ASP Residue #32
+# protonates/stabilizes oxyanion hole
+CST::BEGIN
+  TEMPLATE::   ATOM_MAP: 1 atom_name: O1 C13 C14
+  TEMPLATE::   ATOM_MAP: 1 residue3: 3ve
+
+  TEMPLATE::   ATOM_MAP: 2 atom_name: OD2 CG CB
+  TEMPLATE::   ATOM_MAP: 2 residue1:  D
+
+  CONSTRAINT:: distanceAB:   3.0   0.50   100.0  0     0 ## 4th column means not covalent, so uses the VDW term 
+  #CONSTRAINT::    angle_A:  120.0   20.00 100.00  360.00   1
+  
+  CONSTRAINT::    angle_B:  120.0   20.00 10.00  360.00   1
+   CONSTRAINT::    torsion_AB:  48.5   10.00 10.00  360.00   1
+
+CST::END
+
+#constraint to ASP residue #219
+# actually preps water for nucleophilic attack, no in model so use for carbonyl carbon to oxygen dist
+CST::BEGIN
+  TEMPLATE::   ATOM_MAP: 1 atom_name: C13 C14 O1
+  TEMPLATE::   ATOM_MAP: 1 residue3: 3ve
+
+  TEMPLATE::   ATOM_MAP: 2 atom_name: OD2 CG CB
+  TEMPLATE::   ATOM_MAP: 2 residue1:  D
+
+  CONSTRAINT:: distanceAB:   4.0   0.50   100.0  0     0
+  CONSTRAINT::    angle_B:  120.0   20.00 10.00  360.00   1
+  
+
+CST::END
+
+
+# ASP219 to ASP32
+#
+CST::BEGIN
+  TEMPLATE::   ATOM_MAP: 1 atom_name: OD1 CG CB
+  TEMPLATE::   ATOM_MAP: 1 residue1: D 
+
+  TEMPLATE::   ATOM_MAP: 2 atom_name: OD1 CG CB
+  TEMPLATE::   ATOM_MAP: 2 residue1:  D
+
+# this distance is specific to the asp protease
+# 2 carboxylate, one protein suggested by bell curve activity vs ph
+  CONSTRAINT:: distanceAB:   3.0   0.10   100.0  0     0
+#  same here, needs to be approx 150-160
+#  CONSTRAINT::    angle_B:  120.0   50.00 10.00  360.00   1
+#  CONSTRAINT::    torsion_AB:  120.0   50.00 10.00  360.00   1
+  
+
+CST::END
+
+

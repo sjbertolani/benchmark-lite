@@ -1,0 +1,38 @@
+# for enzdes benchmark
+# SJB 1-28-2016
+
+# Glu 120 to anomeric carbon (nucleophilic attack)
+
+CST::BEGIN
+
+  TEMPLATE::    ATOM_MAP:   1     atom_name: C7 O6 C11
+  TEMPLATE::    ATOM_MAP:   1     residue3: 2nl
+
+  TEMPLATE::    ATOM_MAP:   2     atom_type: OOC
+  TEMPLATE::    ATOM_MAP:   2     residue1: E 
+
+  CONSTRAINT::  distanceAB: 1.6   0.10   100.0   1 #covalent intermediate, so turns off VDW 
+ CONSTRAINT::    angle_A:  109.0   10.00 10.00  360.00   1
+ CONSTRAINT::    angle_B:  120.0   20.00 10.00  360.00   1
+   CONSTRAINT::  torsion_A:  54.0 10.0  10.0   360
+#   CONSTRAINT::  torsion_AB:  145.0 20.0  10.0   180
+   CONSTRAINT::  torsion_B:  180.0 20.0  10.0   180
+   
+CST::END
+
+
+
+# ASP 104 to GLU 356 
+
+CST::BEGIN
+  TEMPLATE::    ATOM_MAP:   1   atom_name: OE2 CD CG
+  TEMPLATE::    ATOM_MAP:   1   residue1: E
+
+  TEMPLATE::    ATOM_MAP:   2   atom_name: OD2 CG OD1
+  TEMPLATE::    ATOM_MAP:   2   residue1: D
+
+  CONSTRAINT:: distanceAB: 3.0 0.50 100.0 0
+  CONSTRAINT::    angle_B:  120.0   20.00 100.00  360.00   1
+
+
+CST::END

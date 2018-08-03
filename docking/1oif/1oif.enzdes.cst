@@ -1,0 +1,46 @@
+## for enzdes benchmark
+#  SJB 1-7-2016 1oif
+#  
+#
+#
+#
+
+#constraint to TYR residue #295 to GLU 351 
+# helps to accurately depict the active site (such as pH modulation of the nucleophilic GLU)
+CST::BEGIN
+  TEMPLATE::   ATOM_MAP: 1 atom_type: OH
+  TEMPLATE::   ATOM_MAP: 1 residue1: Y
+
+  TEMPLATE::   ATOM_MAP: 2 atom_type: OOC
+  TEMPLATE::   ATOM_MAP: 2 residue1:  E
+
+  CONSTRAINT:: distanceAB:   2.6   0.50   100.0  0     0 ## 4th column means not covalent, so uses the VDW term 
+  CONSTRAINT::    angle_B:  120.0   20.00 10.00  360.00   1
+    CONSTRAINT::  torsion_B:  180.0 20.0  10.0   180
+    
+CST::END
+
+#constraint from GLU 351 Nucleophile to Anomeric Carbon 
+# Here, the transition state mimic has a N in the place of the anomeric carbon
+CST::BEGIN
+  TEMPLATE::   ATOM_MAP: 1 atom_name: N1 C1 C5
+  TEMPLATE::   ATOM_MAP: 1 residue3: 1oi
+
+  TEMPLATE::   ATOM_MAP: 2 atom_type: OOC
+  TEMPLATE::   ATOM_MAP: 2 residue1:  E
+
+  CONSTRAINT:: distanceAB:   3.0   0.50   100.0  0     
+  CONSTRAINT::    angle_A:  109.0   10.00 10.00  360.00   1
+  CONSTRAINT::    angle_B:  120.0   10.00 10.00  360.00   1
+    CONSTRAINT::  torsion_A:  90.0 30.0  10.0   360
+    CONSTRAINT::  torsion_AB:  -180.0 30.0  10.0   360
+    CONSTRAINT::  torsion_B:  180.0 10.0  10.0   180
+    
+CST::END
+
+
+# Non existant constraint from GLU 166 to the oxygen of the leaving group
+# This glu protonates the leaving group to make it a better leaving group
+# there is no equivalent in the crystal structure transition state inhibitor
+# In a true design situation this would be important....
+# If you see constraints written below you are seeing things
