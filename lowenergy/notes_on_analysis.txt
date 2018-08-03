@@ -1,0 +1,24 @@
+As a reference, given that the files in the pdbstructures folder that end in the name ".renum" have PDB numbering that matches the output models exactly, the active site rmsd can be easily calculated using something like the following.
+
+# load 2jiecg.pdb 2jienocg.pdb and ../pdbstructures/2jie.pdb.clean.renum into PyMOL
+
+# overlay all 3 structures onto one another (the crystal structure should be the reference)
+
+## get the CA positions that are within 8 A of the hetatms in the reference
+sele aroundhetatm, 2gke.pdb.clean.renum and n. CA within 8 of 2gke.pdb.clean.renum and het
+
+# convert that to a list of numbers
+myres = []
+iterate aroundhet, myres.append(resi)
+print "+".join(myres)
+
+#copy those residue into the next section
+# listofres = print "+".join(myres)
+
+sel xtal, 2gke.pdb and n.  CA and resi $listofres
+sel cg, 2gkecg and n.  CA and resi $listofres
+sel nocg, 2gkenocg and n.  CA and resi $listofres
+
+#then calculate the values with
+rms_cur xtal, cg
+rms_cur xtal, nocg
